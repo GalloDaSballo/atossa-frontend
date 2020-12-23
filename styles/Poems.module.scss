@@ -1,0 +1,56 @@
+.poemsContainer {
+  padding: 10px 53px 50px 53px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // align-items: center;
+  gap: 35px;
+
+  @media only screen and (max-width: 780px) {
+    padding: 0 22px 50px 22px;
+  }
+
+
+
+  .poemCard {
+    min-height: 325px ;
+    color: #3b3b3b;
+
+    @media only screen and (max-width: 780px) {
+      height: 275;
+    }
+
+    img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+
+      @media only screen and (max-width: 780px) {
+        height: 172px;
+      }
+    }
+
+    span {
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 8px;
+       font-size: 12px;
+       text-align: left;
+       color: #b9a278;
+    }
+
+    h3 {
+      font-family: YesevaOne, sans-serif;
+      font-weight: normal;
+      font-size: 19px;
+      margin: 0 0 13px 0;
+    }
+
+    p {
+      font-family: Poppins, sans-serif;
+      font-size: 15px;
+      line-height: 1.53;
+      margin: 0;
+    }
+
+  }
+}
