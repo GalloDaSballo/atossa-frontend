@@ -8,9 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "ethereum-qr-code": "^0.3.0",
     "next": "10.0.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "sass": "^1.30.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.14",
