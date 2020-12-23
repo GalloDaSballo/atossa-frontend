@@ -1,0 +1,45 @@
+//  .hero {
+//    height: 540px;
+//    width: 100%;
+//    background-image: url("../public/Header.jpg");
+//    background-attachment: local;
+//    background-position: center;
+//    background-size: cover;
+//  }
+
+ .backgroundHeader {
+  width: 100%;
+  height: auto;
+  position: relative;
+
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  .donateBtn {
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    transform: translate(-50%, -50%);
+    display: none;
+
+    background: #4d3c27;
+    padding: 7px 37px;
+    color: #fff;
+    font-size: 12px;
+    transition: opacity .3s ease-in;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    @media only screen and (max-width: 520px) {
+      display: block;
+    }
+
+  }
+ }
