@@ -1,0 +1,39 @@
+.navigation {
+  display: flex;
+  padding: 33px 45px 0 45px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+
+  @media only screen and (max-width: 570px) {
+   padding: 15px 18px;
+  } 
+
+  img {
+    width: 116px;
+
+    @media only screen and (max-width: 570px) {
+      width: 70px;
+    }
+  }
+
+  .donateBtn {
+    background: #fff;
+    padding: 7px 20px;
+    color: #c1ab86;
+    font-size: 12px;
+    transition: opacity .3s ease-in;
+    margin-left: 38px;
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    @media only screen and (max-width: 520px) {
+      display: none;
+    }
+  }
+}
