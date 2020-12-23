@@ -1,0 +1,46 @@
+.poem {
+  padding-bottom: 30px;
+  .content {
+    padding: 58px 0 64px 0;
+    max-width: 407px;
+    width: 85%;
+    margin: 0 auto;
+
+    font-family: Poppins;
+    font-size: 17px;
+    line-height: 26px;
+    color: #3b3b3b;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 15px;
+    }
+  }
+
+  .donateBtn {
+     background: #4d3c27;
+     padding: 13px 0;
+     text-align: center;
+     width: 85%;
+     margin: 0 auto;
+     color: #fff;
+     font-size: 17px;
+     transition: opacity .3s ease-in;
+     display: none;
+     margin-bottom: 58px;
+
+     @media only screen and (max-width: 520px) {
+       display: block;
+     }
+
+  }
+
+  .title {
+    font-family: YesevaOne,
+    sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #b9a278;
+    font-weight: normal;
+    margin: 0 0 72px 0;
+  }
+}
