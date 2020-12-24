@@ -6,6 +6,8 @@ import { LanguageContext } from "./context/LanguageContext";
 import styles from "../styles/Poems.module.scss";
 import { formatText } from "../utils/formatText";
 
+import removeMd from "remove-markdown";
+
 const Poem = ({ poem }) => {
   const { language } = useContext(LanguageContext);
   const url =
@@ -24,7 +26,7 @@ const Poem = ({ poem }) => {
           <h3>{formatText(poem.title, 50)}</h3>
         </a>
       </Link>
-      <p>{formatText(poem.content, 100)}</p>
+      <p>{formatText(removeMd(poem.content), 100)}</p>
     </article>
   );
 };

@@ -5,14 +5,15 @@ import styles from "../../../styles/PoemPage.module.scss";
 import PoemHero from "../../../components/PoemHero";
 import Poems from "../../../components/Poems";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 
 const Poem = ({ poem, poems }) => {
-  console.log(poem);
-  console.log(poems);
   return (
     <div className={styles.poem}>
       <PoemHero date={poem.created_at} image={poem.image} title={poem.title} />
-      <div className={styles.content}>{poem.content}</div>
+      <div className={styles.content}>
+        <ReactMarkdown children={poem.content} />
+      </div>
       <Link href="/it/donate">
         <a className={styles.donateBtn}>Donate</a>
       </Link>
@@ -44,7 +45,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     `${process.env.STRAPI_URL}/italians/${params.slug}`
   );
 
-  console.log(res.data);
   return {
     props: {
       poem: res.data.poem as PoemInterface,
