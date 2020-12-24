@@ -28,7 +28,7 @@ const Poem = ({ poem, poems }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await axios.get(`${process.env.STRAPI_URL}/farsis`);
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/farsis`);
 
   const paths = res.data.map((poem: PoemInterface) => ({
     params: { slug: poem.slug },
@@ -42,7 +42,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const res = await axios.get(
-    `${process.env.STRAPI_URL}/farsis/${params.slug}`
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/farsis/${params.slug}`
   );
 
   return {

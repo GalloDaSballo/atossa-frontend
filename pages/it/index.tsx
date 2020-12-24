@@ -19,7 +19,7 @@ const Home = ({ poems }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await axios.get(`${process.env.STRAPI_URL}/italians`);
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/italians`);
 
   return {
     props: {

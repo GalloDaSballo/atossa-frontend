@@ -1,5 +1,5 @@
-const STRAPI_URL = process.env.STRAPI_URL;
+const NEXT_PUBLIC_STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL;
 
 export const formatImageUrl = (imageUrl: string): string => {
-  return `${STRAPI_URL}${imageUrl} `;
+  return `${NEXT_PUBLIC_STRAPI_URL}${imageUrl} `;
 };
