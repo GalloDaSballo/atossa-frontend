@@ -13,7 +13,7 @@ const donate = () => {
         <p>
           Support my poems and donate Ethereum or ERC20 Only. Thanks in advance!
         </p>
-        <QRCode address="0x29D7d1dd5B6f9C864d9db560D72a247c178aE86B" />
+        <QRCode />
         <span>My Ethereum Wallet</span>
       </div>
     </div>

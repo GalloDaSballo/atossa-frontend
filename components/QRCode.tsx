@@ -2,22 +2,20 @@ import EthereumQRPlugin from "ethereum-qr-code";
 import { useEffect } from "react";
 import styles from "../styles/QRCode.module.scss";
 
-const QRCode = ({ address }) => {
+const QRCode = () => {
   useEffect(() => {
-    if (address) {
-      const qr = new EthereumQRPlugin();
+    const qr = new EthereumQRPlugin();
 
-      qr.toCanvas(
-        {
-          to: address,
-          value: 1,
-        },
-        {
-          selector: `.${styles.qrcode}`,
-          scale: 60,
-        }
-      );
-    }
+    qr.toCanvas(
+      {
+        to: process.env.NEXT_PUBLIC_ETHERIUM_ADDRESS,
+        value: 1,
+      },
+      {
+        selector: `.${styles.qrcode}`,
+        scale: 60,
+      }
+    );
   }, []);
 
   return <div className={styles.qrcode} />;
