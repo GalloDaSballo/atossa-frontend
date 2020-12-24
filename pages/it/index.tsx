@@ -16,7 +16,7 @@ const Home = ({ poems }) => {
         <title>Poesie di Atossa - Italiano</title>
       </Head>
       <Hero />
-      <h1 className="title">Latest Updates</h1>
+      <h1 className="title">Poesie</h1>
       <Poems poems={poems} />
     </div>
   );
