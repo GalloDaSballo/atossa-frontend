@@ -7,6 +7,7 @@ import Poems from "../../components/Poems";
 
 const Home = ({ poems }) => {
   const { setCurrentLanguage } = useContext(LanguageContext);
+
   useEffect(() => setCurrentLanguage("far"), []);
   return (
     <div>

@@ -7,6 +7,7 @@ import styles from "../styles/Poems.module.scss";
 import { formatText } from "../utils/formatText";
 
 import removeMd from "remove-markdown";
+import { formatImageUrl } from "../utils/formatImageUrl";
 
 const Poem = ({ poem }) => {
   const { language } = useContext(LanguageContext);
@@ -17,7 +18,7 @@ const Poem = ({ poem }) => {
     <article className={styles.poemCard}>
       <Link href={url}>
         <a>
-          <img src="/placeholder_image.jpg" alt={poem.title} />
+          <img src={formatImageUrl(poem.image.url)} alt={poem.title} />
         </a>
       </Link>
       <span>{formatDate(poem.created_at)}</span>
