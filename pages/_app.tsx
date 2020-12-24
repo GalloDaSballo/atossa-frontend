@@ -1,6 +1,3 @@
-import router from "next/dist/next-server/lib/router/router";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 import LanguageProvider from "../components/context/LanguageContext";
 import Layout from "../components/partials/Layout";
 import "../styles/globals.css";
