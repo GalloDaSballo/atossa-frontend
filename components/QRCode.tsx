@@ -7,7 +7,6 @@ const QRCode = ({ address }) => {
     if (address) {
       const qr = new EthereumQRPlugin();
 
-      console.log(qr);
       qr.toCanvas(
         {
           to: address,
