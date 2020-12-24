@@ -20,7 +20,6 @@ const LanguageProvider = ({ children }) => {
   const setCurrentLanguage = (language: string) => {
     setLanguage(language);
     localStorage.setItem("language", language);
-    router.push(language == "far" ? "/far" : "/it");
   };
 
   useEffect(() => {
@@ -28,11 +27,28 @@ const LanguageProvider = ({ children }) => {
 
     if (!savedLanguage) {
       localStorage.setItem("language", "it");
-      return setCurrentLanguage("it");
+      setLanguage("it");
     }
 
-    setCurrentLanguage(savedLanguage);
+    setLanguage(savedLanguage);
   }, []);
+
+  useEffect(() => {
+    const isItalian = router.pathname.match(/(\/it(\/|$))/);
+
+    if (isItalian && localStorage.getItem("language") !== "it") {
+      localStorage.setItem("language", "it");
+      setLanguage("it");
+      return;
+    }
+
+    const isFarsi = router.pathname.match(/(\/far(\/|$))/);
+
+    if (isFarsi && localStorage.getItem("language") !== "far") {
+      localStorage.setItem("language", "far");
+      setLanguage("far");
+    }
+  }, [router.pathname]);
 
   return (
     <LanguageContext.Provider value={{ setCurrentLanguage, language }}>

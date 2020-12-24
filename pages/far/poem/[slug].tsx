@@ -1,9 +1,27 @@
 import axios from "axios";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Poem as PoemInterface } from "../../../interfaces/poem";
+import styles from "../../../styles/PoemPage.module.scss";
+import PoemHero from "../../../components/PoemHero";
+import Poems from "../../../components/Poems";
+import Link from "next/link";
 
-const Poem = ({ poem }) => {
-  return <div>{poem.content}</div>;
+const Poem = ({ poem, poems }) => {
+  return (
+    <div className={styles.poem}>
+      <PoemHero date={poem.created_at} image={poem.image} title={poem.title} />
+      <div className={styles.content}>{poem.content}</div>
+      <Link href="/far/donate">
+        <a className={styles.donateBtn}>Donate</a>
+      </Link>
+      {poems.length > 0 && (
+        <>
+          <h2 className={styles.title}>More Poems</h2>
+          <Poems poems={[poem, poem]} />
+        </>
+      )}
+    </div>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -27,6 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       poem: res.data as PoemInterface,
+      poems: [],
     },
   };
 };

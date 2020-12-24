@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useContext } from "react";
 import { formatDate } from "../utils/formatDate";
-import { LanguageContext } from "./partials/context/LanguageContext";
+import { LanguageContext } from "./context/LanguageContext";
 
 import styles from "../styles/Poems.module.scss";
 import { formatText } from "../utils/formatText";

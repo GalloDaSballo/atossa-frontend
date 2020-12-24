@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useContext } from "react";
 import styles from "../styles/Hero.module.scss";
-import { LanguageContext } from "./partials/context/LanguageContext";
+import { LanguageContext } from "./context/LanguageContext";
 import Navigation from "./partials/Navigation";
 
 const Hero = () => {

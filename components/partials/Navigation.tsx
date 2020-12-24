@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useContext } from "react";
-import { LanguageContext } from "./context/LanguageContext";
+import { LanguageContext } from "../context/LanguageContext";
 
 import styles from "../../styles/Navigation.module.scss";
 import NavigationLinks from "../NavigationLinks";

@@ -1,13 +1,13 @@
 import axios from "axios";
 import { GetStaticProps } from "next";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { LanguageContext } from "../../components/context/LanguageContext";
 import Hero from "../../components/Hero";
 import Poems from "../../components/Poems";
-const Home = ({ poems }) => {
-  useEffect(() => {
-    localStorage.setItem("language", "it");
-  }, []);
 
+const Home = ({ poems }) => {
+  const { setCurrentLanguage } = useContext(LanguageContext);
+  useEffect(() => setCurrentLanguage("far"), []);
   return (
     <div>
       <Hero />
