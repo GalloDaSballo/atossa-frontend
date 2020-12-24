@@ -17,7 +17,7 @@ const Poem = ({ poem, poems }) => {
       {poems.length > 0 && (
         <>
           <h2 className={styles.title}>More Poems</h2>
-          <Poems poems={[poem, poem]} />
+          <Poems poems={poems} />
         </>
       )}
     </div>
@@ -44,8 +44,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      poem: res.data as PoemInterface,
-      poems: [],
+      poem: res.data.poem as PoemInterface,
+      poems: res.data.poems as PoemInterface[],
     },
   };
 };

@@ -7,6 +7,8 @@ import Poems from "../../../components/Poems";
 import Link from "next/link";
 
 const Poem = ({ poem, poems }) => {
+  console.log(poem);
+  console.log(poems);
   return (
     <div className={styles.poem}>
       <PoemHero date={poem.created_at} image={poem.image} title={poem.title} />
@@ -17,7 +19,7 @@ const Poem = ({ poem, poems }) => {
       {poems.length > 0 && (
         <>
           <h2 className={styles.title}>More Poems</h2>
-          <Poems poems={[poem, poem]} />
+          <Poems poems={poems} />
         </>
       )}
     </div>
@@ -42,10 +44,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     `${process.env.STRAPI_URL}/italians/${params.slug}`
   );
 
+  console.log(res.data);
   return {
     props: {
-      poem: res.data as PoemInterface,
-      poems: [],
+      poem: res.data.poem as PoemInterface,
+      poems: res.data.poems as PoemInterface[],
     },
   };
 };
