@@ -10,7 +10,7 @@ const Navigation = () => {
 
   return (
     <nav className={styles.navigation}>
-      <Link href="/">
+      <Link href={`/${language}`}>
         <a>
           <img src="/atossa-logo.png" alt="Atossa" />
         </a>
