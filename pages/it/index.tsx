@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import { GetStaticProps } from "next";
 import { useContext, useEffect } from "react";
 import { LanguageContext } from "../../components/context/LanguageContext";
@@ -11,6 +12,9 @@ const Home = ({ poems }) => {
   useEffect(() => setCurrentLanguage("far"), []);
   return (
     <div>
+      <Head>
+        <title>Poesie di Atossa - Italiano</title>
+      </Head>
       <Hero />
       <h1 className="title">Latest Updates</h1>
       <Poems poems={poems} />

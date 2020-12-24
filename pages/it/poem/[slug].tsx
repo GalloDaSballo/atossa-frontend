@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Poem as PoemInterface } from "../../../interfaces/poem";
 import styles from "../../../styles/PoemPage.module.scss";
@@ -10,6 +11,9 @@ import ReactMarkdown from "react-markdown";
 const Poem = ({ poem, poems }) => {
   return (
     <div className={styles.poem}>
+      <Head>
+        <title>{poem.title} - Atossa</title>
+      </Head>
       <PoemHero date={poem.created_at} image={poem.image} title={poem.title} />
       <div className={styles.content}>
         <ReactMarkdown children={poem.content} />

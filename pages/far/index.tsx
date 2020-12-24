@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import { GetStaticProps } from "next";
 import { useContext, useEffect } from "react";
 import Hero from "../../components/Hero";
@@ -10,6 +11,9 @@ const Home = ({ poems }) => {
 
   return (
     <div>
+      <Head>
+        <title>Atossa Poetry</title>
+      </Head>
       <Hero />
       <h1 className="title">Latest Updates</h1>
       <Poems poems={poems} />
